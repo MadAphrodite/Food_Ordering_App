@@ -7,4 +7,6 @@ The company has decided to build a food ordering application that will allow con
 * Ordering products
 * Login to the administration panel
 * Admin: viewing and managing orders
-* Admin: product management 
+* Admin: product management
+
+## My responsibilities and highlights during the project
