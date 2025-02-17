@@ -1,0 +1,668 @@
+Issue Type,Issue key,Issue id,Summary,Reporter,Reporter Id,Priority,Status,Created,Updated,Description,Environment,Project key,Project name,Project type,Project lead,Project lead id,Project description,Creator,Creator Id
+Bug,T12RFOP-508,29263,"Manage product - Unauthorized user is not redirected to the Login page after trying to access ""Add new product"" page link",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 9:54 PM,12/Jul/24 12:34 AM,"If unauthorized user has the “Add new product“ page URL link and tries to enter it, the user will be redirected to the “Login” page. Right now it redirects the user to “Browse Menu” page.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+
+
+*Steps to reproduce:*
+
+# Enter the “Add new product” page URL to your browser search bar ([https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/admin-manage-product-hrna|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/admin-manage-product-hrna]) and click enter
+# Observe the result - user has landed on the “Browse Menu” page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/585439?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/585439?] 
+
+*Actual result:* (x) Unauthorized user is redirected to the “Browse Menu” page upon trying to access the “Add new product” page URL
+
+!Unauthorized_user_redirect_to_Login_page_fail.mp4|width=1568,height=1318,alt=""Unauthorized_user_redirect_to_Login_page_fail.mp4""!
+
+*Expected result:* Unauthorized user is redirected to the “Login” page upon trying to access the “Add new product” page URL",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-505,29260,Manage product - System does not show an error message when Name field exceeds 50 symbols,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 9:09 PM,12/Jul/24 12:33 AM,"If Product name exceeds 50 symbols, the following error message should appear: ""Product name cannot be longer than 50 symbols."" Right now, there is no error message shown.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page find ”Name” field
+# Click on the field and enter 51 symbols into the field
+# Observe the result - no error message shown 
+
+*Actual result:* (x) System does not show an error message when Name field exceeds 50 symbols
+
+!productnameerror.png|width=602,height=214,alt=""productnameerror.png""!
+
+*Expected result:* System shows an error message when Name field exceeds 50 symbols: ""Product name cannot be longer than 50 symbols.""",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-501,29256,Manage product - System does not show an error message when incorrect file formats are uploaded to Image field,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 8:36 PM,12/Jul/24 12:32 AM,"If any other file type besides JPG and PNG is uploaded to Image field, the system shows an error: ""Incorrect image type. Please upload files in .jpg or .png format."" Currently, there is no error message shown.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Image” section
+# Click on “+Choose image“ button
+# From the popup file explorer window choose a file that is not jpg/png and click Open
+# Observe the result - image with wrong file format is added to the Image section and no error is shown
+
+*Actual result:* (x) Image field does not show an error message when incorrect file formats are uploaded
+
+!pastagif1.png|width=425,height=394,alt=""pastagif1.png""!
+
+!pastagif2.png|width=245,height=215,alt=""pastagif2.png""!
+
+*Expected result:* Image field shows the following error message when incorrect file formats are uploaded: ""Incorrect image type. Please upload files in .jpg or .png format."" ",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-499,29250,Manage product - Image field allows to upload more than 1 picture,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 7:01 PM,12/Jul/24 12:30 AM,"The user should be able to select and upload only one picture to the Image field. The component must limit possibility to select multiple files. But at the moment more than 1 picture can be uploaded and the system does not prevent it.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Image” section
+# Click on “+Choose image“ button
+# From the popup file explorer window choose more than 1 image and click Open
+# Observe the result - more than 1 image have been uploaded to the Image section
+
+*Actual result:* (x) More than 1 image can be selected and uploaded to the Image section
+
+!imagefileamount.png|width=470,height=407,alt=""imagefileamount.png""!
+
+*Expected result:* Only 1 image can be selected and uploaded to the Image section",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-498,29249,Manage product - An unrequested SKU field exists,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 6:46 PM,12/Jul/24 12:29 AM,"SKU field is not requested, therefore it should not exist.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”SKU” field and observe it exists
+
+*Actual result:* (x) SKU field exists on the Manage product page
+
+!sku.png|width=276,height=161,alt=""sku.png""!
+
+*Expected result:* SKU field does not exist on the Manage product page",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-497,29248,"Manage product - Allergy information list is missing Gluten, Milk and Eggs options",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 6:37 PM,12/Jul/24 12:28 AM,"The following options are shown in the Allergy information list: Celery, Gluten, Eggs, Fish, Lupin, Milk, Molluscs, Mustard, Nuts, Sesame, Soybeans, Sulphur dioxide and sulphites. Right now Gluten, Milk and Eggs options are missing on the Manage product page.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Allergy information” section
+# Observe the multiselect element list and see Gluten, Eggs and Milk are not shown in the list
+
+*Actual result:* (x) Gluten, Eggs and Milk options are not shown in the Allergy information list
+
+!allergylist.png|width=231,height=266,alt=""allergylist.png""!
+
+*Expected result:* Gluten, Eggs and Milk options are included in the Allergy information list",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-495,29246,Manage product - Image field accepts other file formats besides jpg and png,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 5:34 PM,12/Jul/24 12:28 AM,"Only jpg and png files can be uploaded to the Image section. But the element allows to upload files like heif, bmp, webp and gif as well.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Image” section
+# Click on “+Choose image“ button
+# From the popup file explorer window choose a file that is not jpg/png and click Open
+# Observe the result - image with wrong file format is added to the Image section
+
+*Actual result:* (x) Wrong file format can be added to the Image section
+
+!pastagif1.png|width=41.66666666666667%,alt=""pastagif1.png""!
+
+# Click “+Choose image” button
+# Choose wrong file format(gif) image
+# Click Open
+
+
+
+
+
+
+
+
+
+
+
+
+
+!pastagif2.png|width=41.66666666666667%,alt=""pastagif2.png""!
+
+
+
+# Wrong file format(gif) image is added
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Expected result:* Wrong file format can not be added to the Image section",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-493,29243,"Manage product - Unit type has extra unnecessary options (gm,10”,12”)",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 4:55 AM,12/Jul/24 12:27 AM,"Unit type dropdown options are: “serve”, “ml”, “cl”, “litre”, “kg”, “small”, “medium”, “large”, “extra large”. There are some additional units in the list on the Manage product page that should not be there - gm,10”,12”.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Unit type” section and click on it to see the dropdown menu
+
+*Actual result:* (x) Unit type dropdown options are: “serve”, “ml”, “cl”, “litre”, “gm”, “kg”, “small”, “medium”, “large”, “extra large”, 10”, 12”
+
+!unittype.png|width=222,height=231,alt=""unittype.png""!
+
+*Expected result:* Unit type dropdown options are: “serve”, “ml”, “cl”, “litre”, “kg”, “small”, “medium”, “large”, “extra large”",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-492,29242,Manage product - Highlight field doesn't have a dropdown menu,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 4:45 AM,12/Jul/24 12:23 AM,"“Highlight” field must have an optional dropdown menu. Right now it has a checkbox list.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Highlight” section and observe the checkbox list
+
+*Actual result:* (x) Highlight field has a checkbox list
+
+!highlightlist.png|width=217,height=135,alt=""highlightlist.png""!
+
+*Expected result:* Highlight field has a dropdown menu",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-491,29241,"Manage product - ""Soups"" option is missing from the Category list",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 4:26 AM,12/Jul/24 12:22 AM,"“Soups” must be included in the Category dropdown menu.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Category” section and click on it to see the dropdown menu
+
+*Actual result:* (x) “Soups” option is not included in the Category dropdown menu
+
+!nosoups.png|width=201,height=170,alt=""nosoups.png""!
+
+*Expected result: “*Soups” option is included in the Category dropdown menu",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-490,29240,Manage Product - Categories are listed in random order in the dropdown menu,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 4:15 AM,12/Jul/24 12:21 AM,"Category dropdown menu items must be in alphabetical order.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# On Manage product page scroll down to ”Category” section and click on it to see the dropdown menu
+
+*Actual result:* (x) Categories are listed in random order in the dropdown menu
+
+!category_order.png|width=245,height=168,alt=""category_order.png""!
+
+*Expected result:* Categories are listed in alphabetical order in the dropdown menu",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-489,29239,"Manage product - Description, Category, Highlight, Price, Unit type are not marked as required fields",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 4:00 AM,12/Jul/24 9:26 PM,"Description, Category, Highlight, Price and Unit type fields are required fields and should be marked with “*” as well.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# Observe the fields on Manage product page
+
+*Actual result:* (x) Description, Category, Highlight, Price and Unit type fields are optional fields
+
+!description_and_category.jpg|width=634,height=754,alt=""description_and_category.jpg""!
+
+
+
+!price_and_unit_type.jpg|width=618,height=520,alt=""price_and_unit_type.jpg""!
+
+*Expected result:* Description, Category, Highlight, Price and Unit type fields are required fields(marked with *)",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-488,29238,Manage product - Out of stock field doesn't have radio buttons,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 3:47 AM,12/Jul/24 12:18 AM,"Out of stock field should have Yes/No radio buttons not a singular “Yes” checkbox.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# Observe the “Out of stock?” field on the Manage product page
+
+*Actual result:* (x) Out of stock field has a singular Yes checkbox
+
+!outofstockcheckbox.jpg|width=762,height=622,alt=""outofstockcheckbox.jpg""!
+
+*Expected result:* Out of stock field has Yes and No radio buttons",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-487,29237,"Manage product - ""Name"" field has wrong title",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 3:30 AM,12/Jul/24 12:17 AM,"“Name” field should be titled “Product name”.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link]
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# Observe the ”Name” field title on the Manage product page
+
+*Actual result:* (x) Name field’s title is “Name”
+
+!namefield.jpg|width=830,height=462,alt=""namefield.jpg""!
+
+*Expected result:* Name field’s title is “Product name”",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-486,29236,Manage product - Wrong page title and heading,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,To Do,11/Jul/24 3:03 AM,12/Jul/24 12:16 AM,"Manage product page should be titled “Add new product“.
+
+*App version:* 0.0.3.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open Browse Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-full-fixed-ws-12-9928-26668/browse-menu-hrmv?|smart-link] 
+# Scroll down and find a link ”Access admin screen”
+# Click on ”Access admin screen”
+# Log in to admin account, if not already logged in. Click ”Log in” button
+# When on Administration options page , click on ”Add new product” button
+# Observe the heading and title of the Manage product page
+
+*Actual result:* (x) Manage product page is titled ”Manage product”
+
+!manageproduct.jpg|width=1242,height=534,alt=""manageproduct.jpg""!
+
+*Expected result:* Manage product page is titled ”Add new product”",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-207,28863,Product Preview - Preview window picture is not resizing when changing screen sizes  F6,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,21/Jun/24 2:45 AM,12/Jul/24 10:45 PM,"Changing screen sizes from PC screen to tablet/phone size screen, makes the preview picture static and not resize.
+
+*App version:* 0.0.1.
+
+*Environment:*
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+
+*Steps to reproduce:*
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link]
+# Scroll down and find a product(e.g. Salad)
+# Click on a product(e.g. Salad)
+# Preview window will pop up
+# Navigate to the top right corner of the browser's taskbar and click on minimize window button(to minimize the screen size)
+# Scroll preview page up and down 
+# Observe how the picture is static and not resized in the background, not moving along with the preview page window
+
+*Actual result:* (x) Preview window picture is not resizing when changing screen sizes
+
+!saladcollapse.mp4|width=2058,height=1496,alt=""saladcollapse.mp4""!
+
+*Expected result:* Preview window picture is responsive and adapts to different screen sizes",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-206,28862,Product Preview - Lager doesn't have gluten included in the allergy information,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,21/Jun/24 1:35 AM,12/Jul/24 9:59 PM,"Lager has gluten in it, so gluten must be included in the allergy information.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+*Steps to reproduce:*
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link]
+# Scroll down and find the product “Lager“
+# Click on “Lager”
+# Observe the allergy information on the Preview page
+
+*Actual result:* (x) Lager’s allergy information is empty
+
+!lager.jpg|width=41.66666666666667%,alt=""lager.jpg""!
+
+*Expected result:* Lager has gluten stated in the allergy information",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-205,28861,Product Preview - Salad and Pepperoni Pizza have incorrect description format,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,21/Jun/24 1:17 AM,12/Jul/24 10:00 PM,"Salad and Pepperoni Pizza have a bullet/numbered list description. According to requirement, description must be a comma separated list.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+For Salad
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link]
+# Scroll down and find the product “Salad“
+# Click on “Salad”
+# Observe the description information on the Preview page
+
+For Pepperoni Pizza
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link]
+# Scroll down and find the product “Pepperoni Pizza“
+# Click on “Pepperoni Pizza”
+# Observe the description information on the Preview page
+
+*Actual result:* (x) Salad and Pepperoni Pizza have a bullet/numbered list description
+
+!saladdescription.jpg|width=33.333333333333336%,alt=""saladdescription.jpg""!
+
+
+
+!pepperonidescription.jpg|width=33.333333333333336%,alt=""pepperonidescription.jpg""!
+
+*Expected result:* Salad and Pepperoni Pizza have a comma separated list description as per requirement",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-204,28860,Product Preview - Berry smoothie has a wrong Highlight ,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,21/Jun/24 12:54 AM,12/Jul/24 9:59 PM,"Berry smoothie has “Spicy” as highlight, which is incorrect. This product is not spicy.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link]
+# Scroll down and find the product “Berry smoothie“
+# Click on “Berry smoothie”
+# Observe the Highlight information on the Preview page
+
+*Actual result:* (x) Berry smoothie’s highlight is “Spicy”
+
+!bsmoothie3.jpg|width=710,height=680,alt=""bsmoothie3.jpg""!
+
+*Expected result:* Berry smoothie’s highlight info does not include “Spicy”",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-203,28859,Filtering products by highlight - Berry smoothie is listed under the wrong highlight,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,21/Jun/24 12:35 AM,12/Jul/24 9:58 PM,"Berry smoothie is listed under “Vegan” highlight. But the product is not vegan.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+*Steps to reproduce:*
+
+# Open app Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|smart-link]
+# Click the Filtering icon next to the Search bar on the right
+# Click on Highlight “Vegan”
+# Scroll down and observe “Berry smoothie” is included in the list
+
+*Actual result:* (x) Berry smoothie is shown under “Vegan” Highlight
+
+!berrysmoothievegan.jpg|width=1352,height=990,alt=""berrysmoothievegan.jpg""!
+
+*Expected result:* Berry smoothie is not shown under “Vegan” Highlight ",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-198,28854,"Product Preview - Lager, Mojito mocktail don't have Highlight information",Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,20/Jun/24 11:20 PM,12/Jul/24 9:58 PM,"No Highlights are shown on Lager and Mojito mocktail preview pages.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+For Lager:
+
+# Open app Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|smart-link]
+# Scroll down and find the product “Lager”
+# Click on “Lager”
+# Observe Highlight information on the Preview page
+
+For Mojito mocktail:
+
+# Open app Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|smart-link]
+# Scroll down and find the product “Mojito mocktail”
+# Click on “Mojito mocktail”
+# Observe Highlight information on the Preview page
+
+*Actual result:* (x) Lager and Mojito mocktail Highlight information does not exist on the Preview page
+
+!Screenshot 2024-06-20 231150.jpg|width=41.66666666666667%,alt=""Screenshot 2024-06-20 231150.jpg""!
+
+!Screenshot 2024-06-20 230958.jpg|width=41.66666666666667%,alt=""Screenshot 2024-06-20 230958.jpg""!
+
+*Expected result:* Lager and Mojito mocktail Highlight information exists on the Preview page",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-194,28850,Product Preview - Berry smoothie has wrong category,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,20/Jun/24 10:56 PM,12/Jul/24 10:00 PM,"Berry smoothie has “Hot drinks” as category, which is incorrect. It is a cold drink.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu?|smart-link] 
+# Scroll down and find the product “Berry smoothie“
+# Click on “Berry smoothie”
+# Observe the category information on the Preview page
+
+*Actual result:* (x) Berry smoothie’s category is Hot drinks
+
+!berrysmoothie.jpg|width=780,height=918,alt=""berrysmoothie.jpg""!
+
+*Expected result:* Berry smoothie’s category is Cold drinks",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
+Bug,T12RFOP-98,28751,Product Preview/Menu - Mojito mocktail price incorrect,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d,Critical,Done,19/Jun/24 8:35 PM,12/Jul/24 9:57 PM,"Mojito mocktail price is incorrect, doesn’t have a correct decimal point placement.
+
+*App version:* 0.0.1.
+
+*Environment:*
+
+Android 14 Samsung Internet 25.0.1.3
+Chrome 126.0.6478.61, Windows 11 Home 23H2
+Mozilla Firefox 126, Windows 10 Pro
+Safari iOS 17.5.1
+
+Bug is reproducible in all browsers
+
+*Steps to reproduce:*
+
+# Open app Menu page [https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|https://apps.fliplet.com/cerebrum-hub-my-food-ordering-p-1-sprint-1-7-udtwjeu/browse-menue-111p4?|smart-link] 
+# Scroll down and find the product “Mojito mocktail”
+# Click on “Mojito mocktail”
+# Observe price information on the Preview page
+
+*Actual result:* (x) Mojito mocktail price shows 299euros
+
+!mojitoprice.jpg|width=966,height=666,alt=""mojitoprice.jpg""!
+
+*Expected result:* Mojito mocktail price shows 2.99euros",,T12RFOP,T12. Restaurant Food Ordering Project,software,Cerebrum Hub,6202bc6d6ba61b006fb5463f,,Birgit Tikk,70121:251cca08-93e7-417a-82c2-0a142984426d
